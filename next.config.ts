@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/app",
+        destination: "https://app.pathowl.io",
+        permanent: true,
+      },
+      {
+        source: "/app/:path*",
+        destination: "https://app.pathowl.io/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
