@@ -22,6 +22,7 @@ export default function Home() {
           height={140}
           width={0}
           className="h-[100px] w-auto sm:h-[140px]"
+          quality={100}
           priority
         />
 
