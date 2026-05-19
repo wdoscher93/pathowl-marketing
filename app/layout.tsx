@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -12,7 +19,7 @@ export const metadata: Metadata = {
   description: "PathOwl",
   openGraph: {
     title: "PathOwl",
-    description: "PathOwl",
+    description: "In private development",
   },
   robots: {
     index: true,
@@ -26,10 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
-      </body>
+    <html lang="en" className={`${inter.variable} ${sourceSerif.variable}`}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

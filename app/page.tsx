@@ -3,61 +3,52 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div
-      className="min-h-screen flex flex-col"
-      style={{ backgroundColor: "#0A0E27", color: "#E2E8F0" }}
-    >
-      {/* Header */}
-      <header
-        className="sticky top-0 z-10 flex items-center justify-between px-6 py-6"
-        style={{ backgroundColor: "#0A0E27" }}
-      >
+    <div className="min-h-screen flex flex-col bg-canvas text-ink">
+      {/* Nav — 64px tall, canvas background, hairline border */}
+      <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-hairline bg-canvas px-6">
         <Link href="/" aria-label="PathOwl home">
           <Image
             src="/pathowl-logo.png"
             alt="PathOwl"
-            height={36}
+            height={30}
             width={0}
-            style={{ width: "auto", height: "36px" }}
+            style={{ width: "auto", height: "30px" }}
             priority
           />
         </Link>
         <a
           href="https://app.pathowl.io"
-          className="font-medium no-underline hover:underline text-[#3B82F6] hover:text-[#60A5FA]"
+          className="text-[15px] font-normal text-slate no-underline transition-colors duration-200 hover:text-forest"
         >
-          Sign In
+          Sign in
         </a>
       </header>
 
-      {/* Main — fills remaining space, centered */}
+      {/* Main — fills remaining viewport, centered */}
       <main className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-        <Image
-          src="/pathowl-logo.png"
-          alt="PathOwl"
-          height={140}
-          width={0}
-          style={{ width: "auto", height: "140px" }}
-          priority
-        />
-        <p
-          className="mt-8 font-normal"
-          style={{ color: "#94A3B8", fontSize: "16px" }}
-        >
+        {/* "PathOwl" as typographic wordmark — not the logo image */}
+        <span className="text-[36px] font-semibold leading-none tracking-tight text-ink sm:text-[48px]">
+          PathOwl
+        </span>
+
+        <p className="mt-8 text-[18px] font-normal text-slate">
           In private development.
         </p>
+
         <a
           href="mailto:will@pathowl.io"
-          className="mt-4 font-medium no-underline hover:underline text-[#3B82F6] hover:text-[#60A5FA]"
-          style={{ fontSize: "16px" }}
+          className="mt-4 text-[18px] font-medium text-forest no-underline transition-all duration-200 hover:text-forest-deep hover:underline"
         >
           will@pathowl.io
         </a>
       </main>
 
-      {/* Footer */}
-      <footer className="flex justify-center px-6 py-6">
-        <span style={{ color: "#64748B", fontSize: "12px" }}>
+      {/* Footer — Midnight Ink dark inversion band */}
+      <footer className="bg-ink py-12 text-center">
+        <span
+          className="text-[13px] font-normal"
+          style={{ color: "rgba(248, 247, 244, 0.6)" }}
+        >
           &copy; 2026 PathOwl
         </span>
       </footer>
