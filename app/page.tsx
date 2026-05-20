@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-canvas text-ink">
@@ -15,15 +13,12 @@ export default function Home() {
 
       {/* Main — fills remaining viewport, centered */}
       <main className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-        {/* Logo image — owl mark + PathOwl wordmark combined */}
-        <Image
-          src="/pathowl-logo.png"
+        {/* SVG logo — owl mark + PathOwl wordmark, scales natively */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/pathowl-logo.svg"
           alt="PathOwl"
-          height={140}
-          width={0}
           className="h-[100px] w-auto sm:h-[140px]"
-          quality={100}
-          priority
         />
 
         <p className="mt-8 text-[18px] font-normal text-slate">
