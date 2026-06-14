@@ -1,16 +1,8 @@
 {
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "pathowl.io" }],
-      "destination": "https://app.pathowl.io/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.pathowl.io" }],
-      "destination": "https://app.pathowl.io/:path*",
-      "permanent": false
-    }
+    { "source": "/",       "has": [{"type":"host","value":"pathowl.io"}],     "destination": "https://app.pathowl.io/",       "permanent": false },
+    { "source": "/:path*", "has": [{"type":"host","value":"pathowl.io"}],     "destination": "https://app.pathowl.io/:path*", "permanent": false },
+    { "source": "/",       "has": [{"type":"host","value":"www.pathowl.io"}], "destination": "https://app.pathowl.io/",       "permanent": false },
+    { "source": "/:path*", "has": [{"type":"host","value":"www.pathowl.io"}], "destination": "https://app.pathowl.io/:path*", "permanent": false }
   ]
 }
